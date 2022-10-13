@@ -3,7 +3,7 @@ defmodule Cocktail.Rule do
   Represent a recurrence rule (RRULE).
   """
 
-  alias Cocktail.{Builder, Rule, Validation}
+  alias Cocktail.{Rule, Validation}
 
   @type t :: %__MODULE__{
           count: pos_integer | nil,
@@ -27,12 +27,4 @@ defmodule Cocktail.Rule do
 
   @spec set_until(t, Cocktail.time()) :: t
   def set_until(%__MODULE__{} = rule, end_time), do: %{rule | until: end_time}
-
-  defimpl Inspect, for: __MODULE__ do
-    import Inspect.Algebra
-
-    def inspect(rule, _) do
-      concat(["#Cocktail.Rule<", Builder.String.build_rule(rule), ">"])
-    end
-  end
 end
