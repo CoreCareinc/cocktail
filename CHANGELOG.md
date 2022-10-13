@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased][]
 
+## [0.11.0][] - 2022-10-13
+
+### Added
+
+-   Added support for Elixir 1.14 [#3](https://github.com/CoreCareinc/cocktail/pull/3) (thanks to @GRoguelon)
+
+### Fixed
+
+-   Fixed compilation error and Credo warnings [#3](https://github.com/CoreCareinc/cocktail/pull/3) (thanks to @GRoguelon)
+
+### Updated
+
+-   Changed the default Erlang version to 24.3.4 [#1](https://github.com/CoreCareinc/cocktail/pull/1) (thanks to @GRoguelon)
+-   Updated the dependencies [#2](https://github.com/CoreCareinc/cocktail/pull/2) (thanks to @GRoguelon)
+
+## [0.10.1][] - 2021-10-18
+
+### Fixed
+
+-   Fixed infinite loop [#203](https://github.com/peek-travel/cocktail/pull/203) (thanks to @vanvoljg)
+-   Fixed infinite loop [#204](https://github.com/peek-travel/cocktail/pull/204) (thanks to @coladarci)
+-   Fixed failing test (thanks to @coladarci)
+
 ## [0.10.0][] - 2021-06-18
 
 ### Added
