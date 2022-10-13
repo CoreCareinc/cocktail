@@ -1,7 +1,7 @@
 defmodule Cocktail.Mixfile do
   use Mix.Project
 
-  @version "0.10.1"
+  @version "0.11.0"
 
   def project do
     [
@@ -9,7 +9,7 @@ defmodule Cocktail.Mixfile do
       name: "Cocktail",
       source_url: "https://github.com/peek-travel/cocktail",
       version: @version,
-      elixir: "~> 1.7",
+      elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
       description: description(),
       package: package(),
