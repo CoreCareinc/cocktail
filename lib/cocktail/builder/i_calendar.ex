@@ -82,7 +82,7 @@ defmodule Cocktail.Builder.ICalendar do
   """
   @spec build_rule(Schedule.t()) :: String.t()
   def build_rule(schedule) do
-    Enum.map(schedule.recurrence_rules, &do_build_rule/1) |> Enum.join()
+    Enum.map_join(schedule.recurrence_rules, &do_build_rule/1)
   end
 
   @spec build_time(Cocktail.time(), String.t()) :: String.t()
@@ -172,22 +172,14 @@ defmodule Cocktail.Builder.ICalendar do
 
   @spec build_days_of_month([Cocktail.day_of_month()]) :: String.t()
   defp build_days_of_month(days) do
-    days_list =
-      days
-      |> Enum.sort()
-      |> Enum.map(&to_string/1)
-      |> Enum.join(",")
+    days_list = days |> Enum.sort() |> Enum.map_join(",", &to_string/1)
 
     "BYMONTHDAY=#{days_list}"
   end
 
   @spec build_days([Cocktail.day_number()]) :: String.t()
   defp build_days(days) do
-    days_list =
-      days
-      |> Enum.sort()
-      |> Enum.map(&by_day/1)
-      |> Enum.join(",")
+    days_list = days |> Enum.sort() |> Enum.map_join(",", &by_day/1)
 
     "BYDAY=#{days_list}"
   end
@@ -241,11 +233,7 @@ defmodule Cocktail.Builder.ICalendar do
 
   @spec build_times([TimeOfDay.time()]) :: String.t()
   defp build_times(times) do
-    times_list =
-      times
-      |> Enum.sort()
-      |> Enum.map(&format_erl_time/1)
-      |> Enum.join(",")
+    times_list = times |> Enum.sort() |> Enum.map_join(",", &format_erl_time/1)
 
     "X-BYTIME=#{times_list}"
   end
