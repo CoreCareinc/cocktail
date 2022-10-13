@@ -247,12 +247,4 @@ defmodule Cocktail.Schedule do
   @spec no_ms(Cocktail.time() | nil) :: Cocktail.time() | nil
   defp no_ms(nil), do: nil
   defp no_ms(time), do: %{time | microsecond: {0, 0}}
-
-  defimpl Inspect, for: __MODULE__ do
-    import Inspect.Algebra
-
-    def inspect(schedule, _) do
-      concat(["#Cocktail.Schedule<", Builder.String.build(schedule), ">"])
-    end
-  end
 end
